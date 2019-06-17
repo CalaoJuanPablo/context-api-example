@@ -7,8 +7,11 @@ class Person extends React.Component {
       <PersonContext.Consumer>
         {context => (
           <React.Fragment>
-            <p>Name: {context.name}</p>
-            <p>Age: {context.age}</p>
+            <p>Name: {context.state.name}</p>
+            <p>Age: {context.state.age}</p>
+            <button onClick={context.actions.incrementAge}>
+              Increment Age
+            </button>
           </React.Fragment>
         )}
       </PersonContext.Consumer>

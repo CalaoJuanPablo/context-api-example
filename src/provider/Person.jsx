@@ -7,9 +7,17 @@ class PersonProvider extends React.Component {
     name: 'Juan',
     age: 25
   }
+  actions = {
+    incrementAge: () => {
+      this.setState({ age: this.state.age + 1})
+    }
+  }
   render() {
     return (
-      <PersonContext.Provider value={this.state}>
+      <PersonContext.Provider value={{
+        state: this.state,
+        actions: this.actions
+      }}>
         {this.props.children}
       </PersonContext.Provider>
     )
